@@ -1,10 +1,11 @@
-import gym
+#import gym
+from breakout_env import Breakout
 import argparse
 import numpy as np
 import atari_py
 from game_models.ddqn_game_model import DDQNTrainer, DDQNSolver
 from game_models.ge_game_model import GETrainer, GESolver
-from gym_wrappers import MainGymWrapper
+from gym_wrappers import MainGymWrapper #no need
 
 FRAMES_IN_OBSERVATION = 4
 FRAME_SIZE = 84
@@ -16,8 +17,9 @@ class Atari:
     def __init__(self):
         game_name, game_mode, render, total_step_limit, total_run_limit, clip = self._args()
         env_name = game_name + "Deterministic-v4"  # Handles frame skipping (4) at every iteration
-        env = MainGymWrapper.wrap(gym.make(env_name))
-        self._main_loop(self._game_model(game_mode, game_name, env.action_space.n), env, render, total_step_limit, total_run_limit, clip)
+        #env = MainGymWrapper.wrap(gym.make(env_name)) #Breakout()
+        env = Breakout()
+        self._main_loop(self._game_model(game_mode, game_name, env.actions), env, render, total_step_limit, total_run_limit, clip)
 
     def _main_loop(self, game_model, env, render, total_step_limit, total_run_limit, clip):
         run = 0
@@ -79,15 +81,15 @@ class Atari:
         print "Total run limit: " + str(total_run_limit)
         return game_name, game_mode, render, total_step_limit, total_run_limit, clip
 
-    def _game_model(self, game_mode,game_name, action_space):
+    def _game_model(self, game_mode,game_name, actions):
         if game_mode == "ddqn_training":
-            return DDQNTrainer(game_name, INPUT_SHAPE, action_space)
+            return DDQNTrainer(game_name, INPUT_SHAPE, actions)
         elif game_mode == "ddqn_testing":
-            return DDQNSolver(game_name, INPUT_SHAPE, action_space)
+            return DDQNSolver(game_name, INPUT_SHAPE, actions)
         elif game_mode == "ge_training":
-            return GETrainer(game_name, INPUT_SHAPE, action_space)
+            return GETrainer(game_name, INPUT_SHAPE, actions)
         elif game_mode == "ge_testing":
-            return GESolver(game_name, INPUT_SHAPE, action_space)
+            return GESolver(game_name, INPUT_SHAPE, actions)
         else:
             print "Unrecognized mode. Use --help"
             exit(1)
