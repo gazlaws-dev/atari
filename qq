@@ -1,0 +1,40 @@
+* [33m03603d0[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m Update Requirements and use breakout-env instead of OpenAI's gym
+* [33m19b16e3[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m Update README.md
+* [33m2bb670a[m Update README.md
+* [33mcfd0274[m readme cleanup
+* [33ma68e2ae[m added breakout stats
+* [33mfdb859e[m readme fix
+* [33m2e83c55[m readme fix
+* [33ma4be774[m[33m ([m[1;31morigin/development[m[33m)[m readme cleanup
+*   [33m411c70b[m Merge branch 'fully_wrapped' into development
+[32m|[m[33m\[m  
+[32m|[m * [33ma208e4c[m temp trend disable
+[32m|[m * [33m3653c0b[m space_invaders ready to go!
+[32m|[m * [33mf64005f[m cleanup, added assets, readme
+[32m|[m * [33m1c69862[m parsing args fix
+[32m|[m * [33mee42b74[m paramtrized reward cliping
+[32m|[m * [33m887f598[m testing fix
+[32m|[m * [33m65ff19e[m refactor after wrapping
+[32m|[m * [33ma36c897[m works well, needs refactor
+* [33m|[m [33m70f76fb[m hopefully working memory management of experience replay
+[33m|[m[33m/[m  
+* [33m2cd2cb1[m small memory tweak, but should be working
+* [33md7ed556[m setting dir path with date
+* [33m3cc752c[m added some gym wrappers
+* [33ma958178[m logger fix, added q
+* [33mb64cac4[m cleanup
+* [33mbeb7266[m refactored logger
+* [33m7a82a5d[m no memory dumps & floyd
+* [33mcd1ce11[m clean slate
+* [33m8903be8[m logger
+* [33m779ee48[m cleanup
+* [33m3319c27[m targnet network approach - works but needs refactor
+* [33m0aa3abf[m score logging
+* [33m5de89ed[m initial generic dqn implementation
+* [33m45f9e61[m initial dqn model impl
+* [33m5bda15c[m frame preprocessing
+* [33m3ea411c[m game models structure
+* [33m4b18ad2[m atari breakout initial implementation with random actions
+* [33m2c0bdbd[m added score_logger
+* [33me5db696[m initial commit - basic project skeleton
+* [33m0a3af63[m Initial commit
