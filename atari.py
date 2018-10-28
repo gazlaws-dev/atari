@@ -65,7 +65,7 @@ class Atari:
 
     def _args(self):
         parser = argparse.ArgumentParser()
-        available_games = list((''.join(x.capitalize() or '_' for x in word.split('_')) for word in ['breakout'])))
+        available_games = list((''.join(x.capitalize() or '_' for x in word.split('_')) for word in ['breakout']))
         parser.add_argument("-g", "--game", help="Choose from available games: " + str(available_games) + ". Default is 'breakout'.", default="Breakout")
         parser.add_argument("-m", "--mode", help="Choose from available modes: ddqn_train, ddqn_test, ge_train, ge_test. Default is 'ddqn_training'.", default="ddqn_training")
         parser.add_argument("-r", "--render", help="Choose if the game should be rendered. Default is 'False'.", default=False, type=bool)
