@@ -5,7 +5,9 @@ import numpy as np
 import atari_py
 from game_models.ddqn_game_model import DDQNTrainer, DDQNSolver
 from game_models.ge_game_model import GETrainer, GESolver
-from gym_wrappers import MainGymWrapper #no need
+#from gym_wrappers import MainGymWrapper #no need
+import cv2
+import time
 
 FRAMES_IN_OBSERVATION = 4
 FRAME_SIZE = 84
@@ -45,6 +47,11 @@ class Atari:
 
                 action = game_model.move(current_state)
                 next_state, reward, terminal, info = env.step(action)
+                
+                #TODO ONLY FOR DEMO: Show the observation using OpenCV
+                cv2.imshow('obs', next_state)
+                cv2.waitKey(1)
+                time.sleep(.01)
                 if clip:
                     np.sign(reward)
                 score += reward
